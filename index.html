@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Ticket Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flight Ticket Price Prediction</h1>
+    <form action="/" method="post">
+        <label for="departure_time">Departure Time (0-24): </label>
+        <input type="text" name="departure_time" required><br>
+
+        <label for="flight_distance">Flight Distance (in km): </label>
+        <input type="text" name="flight_distance" required><br>
+
+        <label for="passenger_count">Passenger Count: </label>
+        <input type="text" name="passenger_count" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <p>{{ 'Predicted Ticket Price: ₹%.2f' % prediction }}</p>
+    {% endif %}
+</body>
+</html>
